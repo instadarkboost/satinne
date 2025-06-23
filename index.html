@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satinne - A Arte da Intimidade</title>
+    <title>Satinne - A Arte da Intimidade Elevada</title>
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,8 @@
             --cor-texto: #0a0a0a;
             --cor-fundo-escuro: #0a0a0a;
             --cor-texto-claro: #f0f0f0;
-            --cor-cinza-sutil: #666;
+            --cor-cinza-sutil: #5c5c5c; /* Um pouco mais escuro para melhor contraste e sofisticação */
+            --cor-destaque-sutil: #b08d57; /* Um dourado envelhecido sutil para detalhes, se necessário */
             --transition-speed: 0.8s;
             --transition-timing: cubic-bezier(0.2, 0.8, 0.2, 1);
         }
@@ -53,7 +54,7 @@
             z-index: 9999;
             pointer-events: none;
             transform: translate(-50%, -50%);
-            transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+            transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s, transform 0.1s linear; /* Added transform transition for snappier follow */
         }
         .cursor.hover {
             width: 50px;
@@ -78,6 +79,11 @@
             font-weight: 700;
             letter-spacing: 1px;
         }
+        h3 {
+            font-weight: 400; /* Playfair Display can be heavy, lighter for H3 might be good */
+            letter-spacing: 0.5px;
+        }
+
 
         .container {
             max-width: 1200px;
@@ -91,17 +97,20 @@
         }
         
         .section-title {
-            font-size: 3.5rem;
+            font-size: 3.5rem; /* Ajustado em media query para mobile */
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem; /* Aumentado um pouco */
+            font-weight: 700; /* Garantir peso se houver sobreposição */
         }
 
         .section-subtitle {
             font-size: 1.1rem;
             color: var(--cor-cinza-sutil);
             text-align: center;
-            max-width: 700px;
+            max-width: 750px; /* Um pouco mais de espaço */
             margin: 0 auto 5rem auto;
+            font-weight: 300; /* Mais leveza */
+            line-height: 1.8; /* Melhor legibilidade */
         }
         
         .reveal {
@@ -168,7 +177,8 @@
 
         .logo {
             text-decoration: none;
-            height: 50px;
+            height: 50px; /* Default height for desktop */
+            transition: height 0.4s ease; /* Added for smooth transition if needed */
         }
         
         .logo img {
@@ -184,13 +194,13 @@
         }
 
         .nav-menu a {
-            font-weight: 400;
+            font-weight: 400; /* Poderia ser 500 para um toque mais "bold" sutil */
             font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.8px; /* Aumentado para mais elegância */
             color: var(--cor-texto-claro);
             text-decoration: none;
-            margin-left: 2.5rem;
+            margin-left: 2.8rem; /* Aumentado um pouco */
             padding-bottom: 5px;
             position: relative;
             transition: color 0.4s ease;
@@ -206,7 +216,7 @@
             transform: translateX(-50%);
             width: 0;
             height: 1px;
-            background-color: currentColor;
+            background-color: currentColor; /* Poderia usar var(--cor-destaque-sutil) no hover */
             transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
@@ -219,24 +229,24 @@
             justify-content: center;
             text-align: center;
             color: var(--cor-texto-claro);
-            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img satinne/d.jpeg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.50)), url('img satinne/d.jpeg') no-repeat center center/cover; /* Levemente mais escuro o gradiente */
             background-attachment: fixed; 
         }
 
-        .hero-content h1 { font-size: 4.5rem; margin-bottom: 1.5rem; }
-        .hero-content p { font-size: 1.2rem; font-weight: 300; max-width: 600px; margin: 0 auto 2.5rem auto; }
+        .hero-content h1 { font-size: 4.5rem; margin-bottom: 1.5rem; line-height: 1.2; } /* Ajustado em media query */
+        .hero-content p { font-size: 1.25rem; font-weight: 300; max-width: 650px; margin: 0 auto 2.5rem auto; line-height: 1.8; } /* Ajustado em media query */
 
         .cta-button {
             display: inline-block;
-            padding: 1rem 3rem;
+            padding: 1.1rem 3.2rem; /* Aumentado para mais presença */
             border: 1px solid var(--cor-texto-claro);
             color: var(--cor-texto-claro);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            letter-spacing: 2.2px; /* Aumentado */
+            transition: background-color 0.4s ease, color 0.4s ease, padding 0.3s ease, font-size 0.3s ease;
         }
 
         .cta-button:hover { background-color: var(--cor-texto-claro); color: var(--cor-texto); }
@@ -249,31 +259,42 @@
         }
         .content-layout.reverse { grid-template-columns: 1.2fr 1fr; }
         .content-layout img { width: 100%; height: 600px; object-fit: cover; }
-        .content-text h2 { font-size: 3rem; margin-bottom: 1.5rem; }
-        .content-text p { font-size: 1rem; color: #555; margin-bottom: 1rem; }
+        .content-text h2 { font-size: 3rem; margin-bottom: 1.8rem; line-height: 1.3; }
+        .content-text p { font-size: 1.05rem; color: var(--cor-cinza-sutil); margin-bottom: 1.2rem; line-height: 1.9; }
 
-        #tecidos { background-color: #F9F9F9; }
+        #tecidos { background-color: #F8F8F8; /* Um tom ligeiramente mais quente que F9F9F9 */ }
         .fabrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
         .fabric-item { text-align: center; }
-        .fabric-icon { font-size: 2.5rem; font-family: 'Playfair Display', serif; margin-bottom: 1rem; }
-        .fabric-item h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-        .fabric-item p { font-size: 0.9rem; color: var(--cor-cinza-sutil); }
+        .fabric-icon {
+            font-size: 2.8rem; /* Aumentado */
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.2rem; /* Aumentado */
+            color: var(--cor-texto); /* Mais forte */
+            /* Se quiser um círculo:
+            width: 60px; height: 60px; line-height: 60px;
+            border: 1px solid var(--cor-cinza-sutil);
+            border-radius: 50%;
+            margin-left: auto; margin-right: auto;
+            */
+        }
+        .fabric-item h3 { font-size: 1.8rem; margin-bottom: 0.8rem; font-weight: 500; }
+        .fabric-item p { font-size: 0.95rem; color: var(--cor-cinza-sutil); line-height: 1.7; }
 
-        .tabs-nav { display: flex; justify-content: center; gap: 3rem; margin-bottom: 4rem; }
+        .tabs-nav { display: flex; justify-content: center; gap: 3.5rem; margin-bottom: 4rem; } /* Aumentado gap */
         .tab-button {
             font-family: 'Raleway', sans-serif;
             background: none;
             border: none;
             cursor: none;
-            font-size: 1.2rem;
+            font-size: 1.25rem; /* Aumentado */
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 2.2px; /* Aumentado */
             color: var(--cor-cinza-sutil);
-            padding-bottom: 10px;
+            padding-bottom: 12px; /* Aumentado */
             border-bottom: 2px solid transparent;
             transition: color 0.3s, border-color 0.3s;
         }
-        .tab-button.active { color: var(--cor-texto); border-bottom-color: var(--cor-texto); }
+        .tab-button.active { color: var(--cor-texto); border-bottom-color: var(--cor-texto); /* Poderia usar var(--cor-destaque-sutil) aqui */ }
         .tab-content { display: none; }
         
         .tab-content.active {
@@ -285,44 +306,46 @@
             to { opacity: 1; transform: translateY(0); } 
         }
 
-        .collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; } /* Aumentado gap */
         .piece-card { text-align: center; }
         .piece-image { overflow: hidden; margin-bottom: 1.5rem; }
         .piece-image img { width: 100%; height: 500px; object-fit: cover; transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
         .piece-card:hover .piece-image img { transform: scale(1.05); }
-        .piece-card h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-        .piece-card span { font-size: 1rem; color: #777; font-weight: 300; }
+        .piece-card h3 { font-size: 1.8rem; margin-bottom: 0.6rem; font-weight: 500; }
+        .piece-card span { font-size: 1rem; color: #777; font-weight: 300; display: block; line-height: 1.5; }
 
         #vozes { background-color: var(--cor-fundo-escuro); color: var(--cor-texto-claro); text-align: center; }
         #vozes .section-title, #vozes .section-subtitle { color: var(--cor-texto-claro); }
         .testimonial-quote {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            line-height: 1.4;
-            max-width: 800px;
-            margin: 0 auto 1.5rem auto;
+            font-size: 2.3rem; /* Aumentado */
+            line-height: 1.5; /* Aumentado */
+            max-width: 850px; /* Aumentado */
+            margin: 0 auto 2rem auto; /* Aumentado margin bottom */
         }
-        .testimonial-author { font-style: italic; color: #ccc; }
+        .testimonial-author { font-style: italic; color: #ccc; font-size: 1.05rem; }
 
         .cta-link {
             display: inline-block;
-            margin-top: 1.5rem;
+            margin-top: 1.8rem; /* Aumentado */
             color: var(--cor-texto);
             text-decoration: none;
             font-weight: 500;
-            padding-bottom: 3px;
-            border-bottom: 1px solid var(--cor-texto);
+            padding-bottom: 4px; /* Aumentado */
+            border-bottom: 1px solid var(--cor-texto); /* Poderia usar var(--cor-destaque-sutil) */
+            font-size: 1rem; /* Aumentado */
+            letter-spacing: 1px;
         }
 
         .footer { padding: 5rem 0; border-top: 1px solid #e0e0e0; text-align: center; }
         .footer-logo {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem; 
-            margin-bottom: 2rem; 
+            margin-bottom: 2.5rem; /* Aumentado */
             color: var(--cor-texto);
         }
-        .footer-nav a { color: #555; text-decoration: none; margin: 0 1.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-        .footer-copy { margin-top: 3rem; font-size: 0.8rem; color: #999; }
+        .footer-nav a { color: #555; text-decoration: none; margin: 0 1.8rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; } /* Aumentado */
+        .footer-copy { margin-top: 3rem; font-size: 0.85rem; color: #888; } /* Tom mais claro e levemente maior */
         
         .menu-toggle {
             display: none;
@@ -350,17 +373,25 @@
             .content-layout, .content-layout.reverse { grid-template-columns: 1fr; gap: 3rem; }
             .content-layout img { height: 500px; }
             .collection-grid { grid-template-columns: 1fr 1fr; }
+            .container { padding: 0 1.5rem; } /* Adjusted container padding for tablets */
+            .section-title { font-size: 3rem; }
+            .hero-content h1 { font-size: 3.8rem; }
+            .hero-content p { font-size: 1.15rem; }
         }
         
         @media (max-width: 768px) {
             .section { padding: 5rem 0; }
+            .container { padding: 0 1rem; } /* Adjusted container padding for mobile */
             
             .header, .header.scrolled {
                 background-color: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
                 border-bottom-color: #eee;
-                padding: 1.5rem 0;
+                padding: 1rem 0; /* Reduced header padding for mobile */
+            }
+            .header .logo { /* Applied to .logo specifically within .header for mobile */
+                height: 40px; /* Reduced logo height for mobile */
             }
             .header .logo img {
                 filter: none;
@@ -372,8 +403,9 @@
             .nav-menu {
                 position: fixed;
                 top: 0;
-                right: -100%;
-                width: 70%;
+                right: -100%; /* Start off-screen */
+                width: 80%; /* Adjusted width for better coverage */
+                max-width: 320px; /* Max width for the menu */
                 height: 100vh;
                 background-color: var(--cor-fundo);
                 flex-direction: column;
@@ -381,6 +413,7 @@
                 align-items: center;
                 gap: 2rem;
                 transition: right 0.6s var(--transition-timing);
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1); /* Added shadow for better separation */
             }
             
             .nav-menu.active {
@@ -389,11 +422,11 @@
 
             .nav-menu a {
                 color: var(--cor-texto);
-                font-size: 1.2rem;
+                font-size: 1.1rem; /* Slightly adjusted font size */
                 margin-left: 0;
             }
 
-            .header.scrolled .nav-menu a { color: var(--cor-texto); }
+            .header.scrolled .nav-menu a { color: var(--cor-texto); } /* Ensured consistency */
 
             .menu-toggle.active .bar:nth-child(1) {
                 transform: rotate(45deg) translate(7px, 7px);
@@ -405,15 +438,44 @@
                 transform: rotate(-45deg) translate(7px, -7px);
             }
 
-            #hero { height: 80vh; }
-            .hero-content h1 { font-size: 2.8rem; }
-            .section-title { font-size: 2.8rem; }
-            .content-layout img { height: 400px; }
-            .tabs-nav { gap: 1rem; flex-wrap: wrap; }
-            .tab-button { font-size: 1rem; }
+            #hero {
+                height: 80vh; /* Retained mobile height */
+            }
+            .hero-content {
+                padding-left: 1rem; 
+                padding-right: 1rem; 
+                max-width: 100%; 
+            }
+            .hero-content h1 {
+                font-size: 2.8rem; /* Ajustado para mobile */
+                margin-bottom: 1rem; 
+            }
+            .hero-content p {
+                font-size: 1.05rem; /* Ajustado para mobile */
+                line-height: 1.7; 
+                margin-bottom: 2rem; 
+                max-width: 90%; /* Para não colar nas bordas */
+            }
+            .cta-button {
+                padding: 0.9rem 2.2rem; 
+                font-size: 0.85rem; 
+            }
+
+            .section-title { font-size: 2.3rem; } 
+            .section-subtitle { font-size: 1rem; margin-bottom: 3rem; line-height: 1.7; } 
+
+            .content-layout img { height: auto; max-height: 400px; } 
+            .content-text h2 { font-size: 2rem; }
+            .content-text p { font-size: 1rem; }
+
+            .tabs-nav { gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+            .tab-button { font-size: 1rem; letter-spacing: 1.8px; }
             .collection-grid { grid-template-columns: 1fr; gap: 3rem; }
-            .testimonial-quote { font-size: 1.8rem; }
+            .piece-image img { height: 400px; } 
+
+            .testimonial-quote { font-size: 1.7rem; line-height: 1.6; }
             .footer-nav { display: flex; flex-direction: column; gap: 1rem; }
+            .footer-nav a { margin: 0; letter-spacing: 1.2px; }
         }
 
     </style>
@@ -421,7 +483,7 @@
 <body>
     
     <div id="preloader">
-        <img src="img satinne/logo preta.png" alt="Carregando...">
+        <img src="img satinne/logo preta.png" alt="Carregando a essência Satinne...">
     </div>
 
     <div class="cursor"></div>
@@ -451,43 +513,43 @@
         <section id="hero" data-interactive data-dark-section>
             <div class="hero-content reveal">
                 <h1>A Arte da Intimidade</h1>
-                <p>Peças atemporais, desenhadas para o corpo e para a alma. Uma celebração da sua forma mais pura.</p>
-                <a href="#colecoes" class="cta-button">Descobrir Coleções</a>
+                <p>Peças atemporais, esculpidas para o corpo e dedicadas à alma. Uma celebração da sua essência, em sua forma mais autêntica e poderosa.</p>
+                <a href="#colecoes" class="cta-button">Descubra o Universo Satinne</a>
             </div>
         </section>
 
         <section id="arte" class="section">
             <div class="container content-layout">
                 <div class="content-text reveal">
-                    <h2>Design que Perdura.</h2>
-                    <p>Satinne é um estudo em contraste e forma. Fundimos a delicadeza dos tecidos mais nobres com um design minimalista e assertivo. Não seguimos tendências; criamos clássicos.</p>
-                    <p>Cada peça é uma obra de curadoria, pensada para oferecer não apenas conforto incomparável, mas uma conexão profunda com a sua própria elegância.</p>
+                    <h2>Design que Celebra Você.</h2>
+                    <p>Satinne é um estudo em contraste e forma, onde a delicadeza dos tecidos mais nobres encontra um design minimalista e assertivo. Não seguimos tendências; criamos clássicos atemporais que honram sua individualidade.</p>
+                    <p>Cada peça é uma obra de curadoria, concebida para oferecer conforto incomparável e uma profunda conexão com a sua elegância inata e a força da sua feminilidade.</p>
                 </div>
                 <div class="content-image reveal">
-                    <img src="img satinne/e.jpeg" alt="Mulher usando body de renda branco e cardigã, segurando uma xícara">
+                    <img src="img satinne/e.jpeg" alt="Mulher expressando confiança e elegância com lingerie Satinne">
                 </div>
             </div>
         </section>
         
         <section id="tecidos" class="section">
             <div class="container">
-                <h2 class="section-title reveal">Tecidos Nobres</h2>
-                <p class="section-subtitle reveal">Uma curadoria de fibras que tocam a pele como uma segunda natureza. A qualidade está na origem de tudo o que fazemos.</p>
+                <h2 class="section-title reveal">A Alma dos Tecidos</h2>
+                <p class="section-subtitle reveal">Uma curadoria de fibras preciosas que acariciam a pele como uma segunda natureza. A excelência está na origem de cada criação Satinne.</p>
                 <div class="fabrics-grid reveal-group">
                     <div class="fabric-item reveal">
                         <div class="fabric-icon">S</div>
                         <h3>Seda Pura</h3>
-                        <p>Leveza, brilho e uma termorregulação natural para conforto absoluto.</p>
+                        <p>Um afago sublime, leveza etérea e termorregulação natural para um conforto absoluto, dia e noite.</p>
                     </div>
                     <div class="fabric-item reveal">
                         <div class="fabric-icon">R</div>
                         <h3>Renda Francesa</h3>
-                        <p>Tradição e delicadeza em padrões exclusivos que contam histórias.</p>
+                        <p>Herança e delicadeza em tramas exclusivas que sussurram histórias de savoir-faire e feminilidade atemporal.</p>
                     </div>
                     <div class="fabric-item reveal">
                         <div class="fabric-icon">C</div>
                         <h3>Modal Premium</h3>
-                        <p>Sustentabilidade e um toque ultra macio para peças do dia a dia.</p>
+                        <p>Consciência e um toque de extrema maciez para peças que abraçam seu cotidiano com elegância e suavidade.</p>
                     </div>
                 </div>
             </div>
@@ -495,31 +557,31 @@
 
         <section id="colecoes" class="section">
             <div class="container">
-                <h2 class="section-title reveal">Nossas Coleções</h2>
-                <p class="section-subtitle reveal">Explore universos de design pensados para cada momento da sua vida.</p>
+                <h2 class="section-title reveal">Nossas Coleções Exclusivas</h2>
+                <p class="section-subtitle reveal">Explore universos de design concebidos para realçar cada faceta da sua feminilidade e celebrar cada momento da sua vida.</p>
                 
                 <div class="tabs-nav reveal">
-                    <button class="tab-button active" data-tab="lingerie">Lingerie</button>
-                    <button class="tab-button" data-tab="loungewear">Loungewear</button>
-                    <button class="tab-button" data-tab="bridal">Bridal</button>
+                    <button class="tab-button active" data-tab="lingerie">Lingerie Essentiel</button>
+                    <button class="tab-button" data-tab="loungewear">Loungewear Couture</button>
+                    <button class="tab-button" data-tab="bridal">Bridal Rêverie</button>
                 </div>
 
                 <div id="tab-lingerie" class="tab-content active">
                     <div class="collection-grid reveal-group">
                         <div class="piece-card reveal">
-                            <div class="piece-image"><img src="img satinne/b.jpeg" alt="Mulher com body de renda preto e jaqueta de couro"></div>
+                            <div class="piece-image"><img src="img satinne/b.jpeg" alt="Body Noir Satinne em renda francesa e tule poá"></div>
                             <h3>Body Noir</h3>
-                            <span>Renda francesa e tule poá</span>
+                            <span>Renda francesa e tule poá. Um convite à sedução sofisticada.</span>
                         </div>
                         <div class="piece-card reveal">
-                            <div class="piece-image"><img src="img satinne/k.jpeg" alt="Mulher com lingerie branca e calça jeans, segurando caixa de cereal"></div>
-                            <h3>Conjunto Casual</h3>
-                            <span>Renda com corte moderno</span>
+                            <div class="piece-image"><img src="img satinne/k.jpeg" alt="Conjunto Alvorada Satinne em renda moderna"></div>
+                            <h3>Conjunto Alvorada</h3> 
+                            <span>Renda com design contemporâneo para um despertar de confiança e bem-estar.</span>
                         </div>
                         <div class="piece-card reveal">
-                            <div class="piece-image"><img src="img satinne/j.jpeg" alt="Mulher em conjunto de lingerie preto sentado em um sofá cinza"></div>
+                            <div class="piece-image"><img src="img satinne/j.jpeg" alt="Conjunto Soir Satinne em renda e microfibra"></div>
                             <h3>Conjunto Soir</h3>
-                            <span>Renda e microfibra para conforto</span>
+                            <span>Renda e microfibra para noites de serenidade e elegância.</span>
                         </div>
                     </div>
                 </div>
@@ -527,19 +589,19 @@
                 <div id="tab-loungewear" class="tab-content">
                     <div class="collection-grid reveal-group">
                         <div class="piece-card reveal">
-                            <div class="piece-image"><img src="img satinne/d.jpeg" alt="Mulher com lingerie branca na cama com um violão"></div>
+                            <div class="piece-image"><img src="img satinne/d.jpeg" alt="Top Poème Satinne em renda chantilly"></div>
                             <h3>Top Poème</h3>
-                            <span>Renda chantilly com alças finas</span>
+                            <span>Renda chantilly com alças finas. Um sopro de romance e delicadeza.</span>
                         </div>
                          <div class="piece-card reveal">
-                            <div class="piece-image"><img src="img satinne/i.jpeg" alt="Close em body de renda branco com mangas de poá"></div>
+                            <div class="piece-image"><img src="img satinne/i.jpeg" alt="Body Matin Satinne em tule poá e renda floral"></div>
                             <h3>Body Matin</h3>
-                            <span>Tule poá e renda floral</span>
+                            <span>Tule poá e renda floral. Para manhãs onde a elegância encontra o conforto supremo.</span>
                         </div>
                          <div class="piece-card reveal">
-                            <div class="piece-image"><img src="img satinne/m.jpeg" alt="Mulher com body de renda branco e cardigã"></div>
+                            <div class="piece-image"><img src="img satinne/m.jpeg" alt="Robe de Manhã Satinne, sinônimo de conforto e elegância"></div>
                             <h3>Robe de Manhã</h3>
-                            <span>Conforto e elegância para começar o dia</span>
+                            <span>Um abraço de luxo e serenidade para iniciar seus rituais.</span>
                         </div>
                     </div>
                 </div>
@@ -547,19 +609,19 @@
                 <div id="tab-bridal" class="tab-content">
                      <div class="collection-grid reveal-group">
                         <div class="piece-card reveal">
-                            <div class="piece-image"><img src="img satinne/g.jpeg" alt="Mulher com body de noiva branco segurando uma filmadora antiga"></div>
+                            <div class="piece-image"><img src="img satinne/g.jpeg" alt="Body Noiva Satinne em renda chantilly e tule poá"></div>
                             <h3>Body Noiva</h3>
-                            <span>Renda chantilly e tule poá</span>
+                            <span>Renda chantilly e tule poá. A promessa de um dia inesquecível, envolta em pura arte.</span>
                         </div>
                          <div class="piece-card reveal">
-                            <div class="piece-image"><img src="img satinne/l.jpeg" alt="Close no detalhe de body de noiva branco com mangas de renda"></div>
+                            <div class="piece-image"><img src="img satinne/l.jpeg" alt="Detalhe Poème do body de noiva Satinne"></div>
                             <h3>Detalhe Poème</h3>
-                            <span>Detalhes em renda sobre tule</span>
+                            <span>Onde cada ponto é uma declaração de amor e preciosismo.</span>
                         </div>
                          <div class="piece-card reveal">
-                            <div class="piece-image"><img src="img satinne/h.jpeg" alt="Costas de body de noiva com tule poá e decote em renda"></div>
+                            <div class="piece-image"><img src="img satinne/h.jpeg" alt="Costas do body de noiva Satinne com decote em renda"></div>
                             <h3>Véu de Renda</h3>
-                            <span>Decote profundo nas costas</span>
+                            <span>Decote profundo nas costas. Um toque final de mistério e elegância etérea.</span>
                         </div>
                     </div>
                 </div>
@@ -569,22 +631,22 @@
         <section id="vozes" class="section" data-interactive data-dark-section>
             <div class="container reveal">
                 <h2 class="section-title">Vozes Satinne</h2>
-                <p class="section-subtitle">A experiência de quem veste nossa arte.</p>
-                <blockquote class="testimonial-quote">"Nunca me senti tão em casa no meu próprio corpo. A qualidade é algo que se sente, não apenas se vê."</blockquote>
-                <cite class="testimonial-author">— A.L., Cliente Privé</cite>
+                <p class="section-subtitle">A experiência de quem veste e celebra nossa arte.</p>
+                <blockquote class="testimonial-quote">"Nunca me senti tão em casa no meu próprio corpo. A qualidade Satinne é uma carícia que se sente, não apenas se vê. É empoderador."</blockquote>
+                <cite class="testimonial-author">— A.L., Cliente Privé Satinne</cite>
             </div>
         </section>
 
         <section id="prive" class="section">
             <div class="container content-layout reverse">
                  <div class="content-image reveal">
-                    <img src="img satinne/a.jpeg" alt="Modelo com body preto em frente a polaroids de campanha">
+                    <img src="img satinne/a.jpeg" alt="Atelier Satinne: experiência de atendimento Privé">
                 </div>
                 <div class="content-text reveal">
-                    <h2>Atendimento Privé</h2>
-                    <p>Para uma experiência verdadeiramente única, oferecemos um serviço de consultoria e peças sob medida. Uma jornada confidencial e personalizada para encontrar ou criar a sua lingerie perfeita.</p>
-                    <p>Agende um horário com nossos especialistas em nosso atelier e descubra um novo nível de exclusividade.</p>
-                    <a href="#visite" class="cta-link">Agendar um Horário</a>
+                    <h2>Atendimento Privé Satinne</h2>
+                    <p>Para uma experiência de lingerie verdadeiramente singular, nosso Atendimento Privé oferece consultoria especializada e peças sob medida. Uma jornada confidencial e pessoal para desvendar ou co-criar a lingerie que reflete a sua identidade única.</p>
+                    <p>Reserve um momento em nosso atelier com nossos especialistas e mergulhe em um novo patamar de exclusividade e autocelebração.</p>
+                    <a href="#visite" class="cta-link">Reserve Sua Consultoria Exclusiva</a>
                 </div>
             </div>
         </section>
@@ -595,10 +657,10 @@
             <div class="footer-logo">Satinne</div>
             <div class="footer-nav">
                 <a href="mailto:contato@satinne.com">contato@satinne.com</a>
-                <a href="https://www.instagram.com/satinne_intimate?igsh=MW1nN2tueDFyc296YQ==">Instagram</a>
-                <a href="#">Showroom: Rua Oscar Freire, 900, São Paulo</a>
+                <a href="https://www.instagram.com/satinne_intimate?igsh=MW1nN2tueDFyc296YQ==" target="_blank" rel="noopener noreferrer">Instagram</a> 
+                <a href="#">Showroom: Rua Oscar Freire, 900, São Paulo – Um convite à experiência Satinne.</a>
             </div>
-            <p class="footer-copy">© 2025 Satinne. Todos os direitos reservados. Uma marca fictícia criada com propósito de design.</p>
+            <p class="footer-copy">© 2025 Satinne. Todos os direitos reservados. Uma marca fictícia criada com propósito de design e celebração da feminilidade.</p>
         </div>
     </footer>
 
@@ -638,15 +700,18 @@
         const cursor = document.querySelector('.cursor');
         const interactiveElements = document.querySelectorAll('a, button, .cta-button, .cta-link');
         
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
+        if (cursor) { // Check if cursor exists
+            document.addEventListener('mousemove', e => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
 
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-        });
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        }
+
 
         const darkSections = document.querySelectorAll('[data-dark-section]');
         const body = document.body;
@@ -665,17 +730,20 @@
         const heroSection = document.getElementById('hero');
         window.addEventListener('scroll', () => {
             const scrollPosition = window.scrollY;
-            if (scrollPosition > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+            if (header) { // Check if header exists
+                 if (scrollPosition > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
             }
+           
             
-            if (!('ontouchstart' in window)) {
+            if (!('ontouchstart' in window) && heroSection) { 
                 heroSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
             }
         });
-        window.dispatchEvent(new Event('scroll'));
+        window.dispatchEvent(new Event('scroll')); 
 
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabContents = document.querySelectorAll('.tab-content');
@@ -695,32 +763,37 @@
 
                 button.classList.add('active');
                 const activeTabContent = document.getElementById('tab-' + tabTarget);
-                activeTabContent.classList.add('active');
-                
-                const newRevealElements = activeTabContent.querySelectorAll('.reveal');
-                 newRevealElements.forEach(elem => {
-                    if (!elem.parentElement.classList.contains('reveal-group') || elem === elem.parentElement.querySelector('.reveal')) {
-                        revealObserver.observe(elem);
-                    }
-                });
+                if (activeTabContent) { // Check if activeTabContent exists
+                    activeTabContent.classList.add('active');
+                    
+                    const newRevealElements = activeTabContent.querySelectorAll('.reveal');
+                    newRevealElements.forEach(elem => {
+                        if (!elem.parentElement.classList.contains('reveal-group') || elem === elem.parentElement.querySelector('.reveal')) {
+                            revealObserver.observe(elem);
+                        }
+                    });
+                }
             });
         });
         
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
-        const navLinks = navMenu.querySelectorAll('a');
+        
+        if (menuToggle && navMenu) { 
+            const navLinks = navMenu.querySelectorAll('a');
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
             });
-        });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
 
     });
     </script>
